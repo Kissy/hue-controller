@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello WebSocket</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="//code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+    <script defer src="//cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.2.1/material.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/app.js"></script>
+</head>
+<body>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">Hue Controller</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+        </div>
+    </header>
+    <main class="mdl-layout__content">
+        <div class="page-content">
+
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                    <button class="mdl-button mdl-js-button mdl-button--raised" id="enable">
+                        Enable
+                    </button>
+                    <button class="mdl-button mdl-js-button mdl-button--raised" id="disable">
+                        Disable
+                    </button>
+
+                    <h1>Lights</h1>
+                    <div id="lights"></div>
+
+                    <h1>Groups</h1>
+                    <div id="groups"></div>
+
+                    <h1>Scenes</h1>
+                    <div id="scenes"></div>
+
+                    <h1>Schedules</h1>
+                    <div id="schedules"></div>
+
+                    <h1>Sensors</h1>
+                    <div id="sensors"></div>
+
+                    <h1>Rules</h1>
+                    <div id="rules"></div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>

@@ -13,7 +13,7 @@ import java.security.Principal;
 import java.util.Collection;
 
 @Controller
-public class GroupsController {
+public class GroupController {
 
     @MessageMapping("/group/delete")
     public void delete(ResourceIdentitifer identitifer) {

@@ -113,6 +113,7 @@ function updateScenes(data) {
             <th>picture</th>
             <th>lastupdated</th>
             <th>version</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -129,6 +130,11 @@ function updateScenes(data) {
                 <td>${PHScene.picture}</td>
                 <td>${PHScene.lastupdated}</td>
                 <td>${PHScene.version}</td>
+                <td>
+                    <button class="mdl-button mdl-button--icon">
+                        <i class="material-icons" data-identifier="${PHScene.sceneIdentifier}">delete</i>
+                    </button>
+                </td>
             </tr>
         `).join("")}
     </tbody>
@@ -268,8 +274,14 @@ window.addEventListener("DOMContentLoaded", function () {
         stompClient.send("/app/light/disable", {});
     };
     document.getElementById("groups").onclick = function(event) {
-        console.log(event.target.dataset);
-        stompClient.send("/app/group/delete", {}, JSON.stringify(event.target.dataset));
+        if (event.target.dataset['identifier'] && confirm("Delete " + event.target.dataset['identifier'] + " ?")) {
+            stompClient.send("/app/group/delete", {}, JSON.stringify(event.target.dataset));
+        }
+    };
+    document.getElementById("scenes").onclick = function(event) {
+        if (event.target.dataset['identifier'] && confirm("Delete " + event.target.dataset['identifier'] + " ?")) {
+            stompClient.send("/app/scene/delete", {}, JSON.stringify(event.target.dataset));
+        }
     };
 }, false);
 
